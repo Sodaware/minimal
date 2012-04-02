@@ -546,6 +546,43 @@ table.figures {
 
 
 /* ----------------------------------------------------------------------
+ * -- Footnotes
+ * ---------------------------------------------------------------------- */
+
+sup {
+	vertical-align: bottom;
+	position: relative;
+	top: -0.5em;
+	margin-left: 0.25em;
+}
+
+sub {
+	vertical-align: bottom;
+	position: relative;
+	top: 0.5em;
+	margin-left: 0.25em;
+}
+
+#footnotes p.footnote {
+	
+	padding-left: 30px;
+	position: relative;
+
+	sup {
+		position: absolute;
+		left: 0px;
+		border-right: 2px solid #DDD;
+		padding: 4px 8px 4px 4px;
+		height: 100%;
+		display: inline-block;
+		vertical-align: bottom;
+		margin: 0;
+	}
+
+}
+
+
+/* ----------------------------------------------------------------------
  * -- Icons for Links
  * ---------------------------------------------------------------------- */
 
