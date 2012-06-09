@@ -11,9 +11,9 @@
  * -- Page Options
  * ---------------------------------------------------------------------- */
 
-$font-face: 		'Century Schoolbook', Georgia, serif;
-$heading-font: 		"Century Schoolbook", Georgia, serif;
-$body-font:    		'Century Schoolbook', Georgia, serif;
+$font-face:       'Century Schoolbook', Georgia, serif;
+$heading-font:    'Century Schoolbook', Georgia, serif;
+$body-font:       'Century Schoolbook', Georgia, serif;
 
 $font-color: 		#444;
 $heading-color: 	#555;
@@ -516,13 +516,14 @@ a.template {
 	}
 }
 
-
-/* ----------------------------------------------------------------------
- * -- Footnotes
- * ---------------------------------------------------------------------- */
-
-h3.footnotes {
-	@include underline;
+p.resource {
+    
+    text-align: center;
+    
+    img {
+	     @include box-shadow(0, 0, 4px, 4px, #eee);
+	     border: 1px solid #aaa;
+    }
 }
 
 
@@ -548,6 +549,11 @@ table.figures {
 /* ----------------------------------------------------------------------
  * -- Footnotes
  * ---------------------------------------------------------------------- */
+
+
+h3.footnotes {
+	@include underline;
+}
 
 sup {
 	vertical-align: bottom;
