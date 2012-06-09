@@ -527,7 +527,40 @@ p.resource {
     img {
 	     @include box-shadow(0, 0, 4px, 4px, #eee);
 	     border: 1px solid #aaa;
+        max-width: 520px;
     }
+}
+
+
+/* ----------------------------------------------------------------------
+ * -- Summary Lists
+ * ---------------------------------------------------------------------- */
+
+dl.summary { 
+    
+	 overflow: hidden;
+    
+    dt { 
+	     float: left;
+	     padding: 4px; 
+	     width: 22%;
+	     text-align: right;
+	     background: #eee;
+	     font-weight: bold;
+	     font-size: 0.9em;
+	     clear: both;
+	     margin-bottom: 2px !important;
+    }
+    
+    dd { 
+	     margin: 0;
+	     padding: 4px;
+	     float: left;
+	     width: 75%;
+	     font-size: 0.9em;
+	     margin-bottom: 2px !important;
+    }
+    
 }
 
 
@@ -553,7 +586,6 @@ table.figures {
 /* ----------------------------------------------------------------------
  * -- Footnotes
  * ---------------------------------------------------------------------- */
-
 
 h3.footnotes {
 	@include underline;
