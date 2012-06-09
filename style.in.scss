@@ -527,8 +527,14 @@ p.resource {
     img {
 	     @include box-shadow(0, 0, 4px, 4px, #eee);
 	     border: 1px solid #aaa;
+        vertical-align: top; 
         max-width: 520px;
     }
+    
+    a:hover img {
+		  @include box-shadow(0, 0, 0, 4px, #ddd);
+    }
+    
 }
 
 
