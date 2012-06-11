@@ -24,6 +24,15 @@ $line-thickness: 	4px;
 $content-width: 	540px;
 $sidebar-width: 	220px;
 
+// Colors
+$color-red:       #FF3366;
+$color-orange:    #FF6633;
+$color-yellow:    #FFCC33;
+$color-green:     #00661A;
+$color-blue:      #3366FF;
+$color-indigo:    #6633FF;
+$color-violet:    #002EB8;
+
 
 /* ----------------------------------------------------------------------
  * -- Mixins
@@ -132,11 +141,8 @@ article > aside {
 	font-size: 0.9em;
 	background: #EEE;
 	position: relative;
-	padding: 32px 10px 10px;
+	padding: 10px;
 	color: #777;
-	
-	
-	
 	margin: 16px 0;
 	
 	p {
@@ -144,16 +150,36 @@ article > aside {
 		font-style: italic;
 	}
 	
-	&::after {
-		content: "Note";
-		font-size: 1.2em;
-		display: block;
-		position: absolute;
-		top: 0; left: 0;
-		padding: 4px 8px;
-		text-transform: lowercase;
-		background: $line-color;
-	}
+   &.note, &.about, &.info, &.aside {
+       padding: 32px 10px 10px;
+
+       &::after {
+		     font-size: 1.2em;
+		     display: block;
+		     position: absolute;
+		     top: 0; left: 0;
+		     padding: 4px 8px;
+		     text-transform: lowercase;
+		     background: $line-color;
+       }
+   }
+   
+   &.note::after {
+		 content: "Note";
+   }
+   
+   &.about::after {
+       content: 'About';
+   }
+   
+   &.info::after {
+       content: 'Info';
+   }
+   
+   &.aside::after {
+       content: 'Aside';
+   }
+
 }
 
 /* ----------------------------------------------------------------------
@@ -514,6 +540,9 @@ article.resource {
 a.template {
 	@include box-shadow(0, 0, 4px, 4px, #eee);
 	border: 1px solid #aaa;
+   img {
+       vertical-align: top;
+   }
 
 	&:hover {
 		@include box-shadow(0, 0, 0, 4px, #ddd);
@@ -631,6 +660,114 @@ sub {
 
 
 /* ----------------------------------------------------------------------
+ * -- Timeline
+ * ---------------------------------------------------------------------- */
+
+table.timeline {
+    
+    width: 100%;
+
+    th, td {
+        padding: 2px 20px;
+
+        p {
+            margin: 8px 0 !important;
+        }
+    }
+
+    th {
+        padding: 10px 20px;
+        vertical-align: top;
+    }
+
+    tr {
+        margin-bottom: 2px;
+        
+        &.important {
+            
+            th[scope='row'] {
+                border-color: lighten(#36F, 10%);
+            }
+            
+        }
+
+        // Colour overrides
+        &.red th[scope='row'] {
+            border-color: lighten($color-red, 10%);
+        }
+        
+        &.orange th[scope='row'] {
+            border-color: lighten($color-orange, 10%);
+        }
+        
+        &.yellow th[scope='row'] {
+            border-color: lighten($color-yellow, 10%);
+        }
+        
+        &.green th[scope='row'] {
+            border-color: lighten($color-green, 10%);
+        }
+        
+        &.blue th[scope='row'] {
+            border-color: lighten($color-blue, 10%);
+        }
+        
+        &.indigo th[scope='row'] {
+            border-color: lighten($color-indigo, 10%);
+        }
+        
+        &.violet th[scope='row'] {
+            border-color: lighten($color-violet, 10%);
+        }
+        
+        
+
+
+        &.large {
+            padding-bottom: 80px;
+        }
+        
+        &.bold {
+            &, & p {
+                font-weight: bold;
+            }
+        }
+        
+        &.highlight {
+            
+        }
+
+        &.attention {
+            &, & p {
+                font-size: 120% !important;
+            }
+        }
+
+        &.plus {
+            th[scope='row']::after {
+                content: "+";
+                font-size: 2em;
+                display: block;
+                position: absolute;
+                top: -8px;
+                left: 117px;
+                padding: 4px 8px;
+                color: lighten(#36F, 10%);                
+            }
+        }
+        
+    }
+
+    th[scope='row'] {
+        border-right: 3px solid #eee;
+        background: white;
+        width: 10%;
+    }
+
+}
+
+
+/* ----------------------------------------------------------------------
  * -- Icons for Links
  * ---------------------------------------------------------------------- */
 
@@ -639,6 +776,23 @@ sub {
 @include icon-link('ods');
 @include icon-link('doc');
 @include icon-link('xls');
+
+
+/* ----------------------------------------------------------------------
+ * -- Font Awesome icon support
+ * ---------------------------------------------------------------------- */
+
+.icon-small {
+    font-size: 16px;
+}
+
+.icon-blue {
+    color: #36F;
+}
+
+.icon-green {
+    color: #00661A;
+}
 
 
 /* ----------------------------------------------------------------------
