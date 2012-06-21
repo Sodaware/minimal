@@ -830,6 +830,51 @@ span.bar {
 
 
 /* ----------------------------------------------------------------------
+ * -- Horizontal Tabs
+ * ---------------------------------------------------------------------- */
+
+.tabs.horizontal {
+    
+    margin-bottom: 32px;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0 8px;
+        height: 34px;
+        border-bottom: ($line-thickness / 2) solid $line-color;
+        
+        li {
+            float: left;
+            margin-right: 8px;
+        }
+        
+        li.current a {
+            border-bottom: ($line-thickness / 2) solid white;;
+            background: white;
+            font-weight: bold;
+        }
+
+        a {
+            
+            display: block;
+            padding: 5px 10px;
+            border: ($line-thickness / 2) solid $line-color;
+            border-radius: 4px 4px 0 0;
+            text-decoration: none;
+            background: #fafafa;
+
+            &:hover {
+                background: #fff;
+            }
+
+        }
+        
+    }
+}
+
+
+/* ----------------------------------------------------------------------
  * -- Icons for Links
  * ---------------------------------------------------------------------- */
 
