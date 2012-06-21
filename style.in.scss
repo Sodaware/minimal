@@ -605,16 +605,30 @@ dl.summary {
 
 table.figures {
 	
-	border-top: ($line-thickness / 2) solid $line-color;
-	border-bottom: ($line-thickness / 2) solid $line-color;
-
-	td {
-		padding: 4px;
-
-		&.left 	{ text-align: left; }
-		&.right	{ text-align: right; }
-	}
-
+	 border-top: ($line-thickness / 2) solid $line-color;
+	 border-bottom: ($line-thickness / 2) solid $line-color;
+    
+    td, th {
+		  padding: 4px;
+        
+		  &.left 	{ text-align: left; }
+		  &.right	{ text-align: right; }
+	 }
+    
+    &.filled {
+        
+        border-top: 0;
+        
+        thead th {
+            border-bottom: ($line-thickness / 2) solid $line-color;
+            font-weight: bold;
+        }
+        
+        th {
+            background: #eee;
+        }
+   }
+   
 }
 
 
@@ -720,13 +734,12 @@ table.timeline {
             border-color: lighten($color-violet, 10%);
         }
         
-        
-
-
         &.large {
-            padding-bottom: 80px;
+            th, td {
+                padding-bottom: 80px;
+            }
         }
-        
+
         &.bold {
             &, & p {
                 font-weight: bold;
@@ -764,6 +777,55 @@ table.timeline {
         width: 10%;
     }
 
+}
+
+
+/* ----------------------------------------------------------------------
+ * -- Charts / Graphs
+ * ---------------------------------------------------------------------- */
+
+table.activity {
+    
+    border-spacing: 0 1px;
+    
+    thead td {
+        text-align: center;
+    }
+    
+    th[scope='row'] {
+        font-size: 0.8em;
+    }
+    
+    tbody td {
+        background: $color-blue;
+        text-align: center;
+        color: transparent;
+        font-size: 1%;
+        width: 25px;
+    }
+}
+
+span.bar {
+    
+    display: block;
+    background: #fafafa;
+    height: 24px; margin: 1px;
+    
+    &.dark {
+        background: #eaeaea;
+    }
+    
+    .contents {
+        display: block;
+        height: 24px;
+        background: lighten($color-blue, 20%);
+        color: transparent;
+        
+        &.red {
+            background: lighten($color-red, 20%);
+        }
+    }
+    
 }
 
 
