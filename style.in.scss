@@ -502,6 +502,51 @@ input[type="submit"] {
 
 
 /* ----------------------------------------------------------------------
+ * -- Fancy Blog List Table
+ * ---------------------------------------------------------------------- */
+
+.blog_list {
+        
+    width: 100%;
+    border-spacing: 0 1px;
+
+    tbody {
+        border-spacing: 0 1px;
+    }
+
+    tbody:nth-child(odd) {
+        td, th { background: #fafafa; }
+    }
+
+    tbody:nth-child(even) {
+        td, th { background: #fff; }
+    }
+
+    td.icon, td.description {
+        border-bottom: 2px solid #eee;
+    }
+    
+    td.icon {
+        width: 18px;
+        vertical-align: top;
+        padding: 6px 4px;
+    }
+    
+    th[scope='row'] {
+        font-weight: bold;
+        text-align: left;
+        background: none;
+    }
+    
+    td.secondary {
+        color: #999;
+        text-align: right;
+    }
+    
+}    
+
+
+/* ----------------------------------------------------------------------
  * -- Resources Layout
  * ---------------------------------------------------------------------- */
 
