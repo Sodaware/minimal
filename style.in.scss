@@ -114,7 +114,17 @@ h4 {
 a { color: #3366FF; }
 a:hover { color: #00661A; }
 
+// Table Styles
+
 td, th { padding: 4px; font-size: 0.9em; }
+
+thead th {
+    background: #eee;
+    
+    &.empty { background: white; }
+    &.right { text-align: right; }
+    &.left { text-align: left; }
+}
 
 th[scope="row"] {
 	text-align: right;
@@ -860,15 +870,30 @@ span.bar {
         background: #eaeaea;
     }
     
+    &:hover .contents {
+        opacity: 0.8;
+    }
+
     .contents {
         display: block;
         height: 24px;
         background: lighten($color-blue, 20%);
         color: transparent;
         
-        &.red {
-            background: lighten($color-red, 20%);
+        &:hover {
+            opacity: 1;
         }
+
+        opacity: 0.6;
+        
+        &.red    { background: lighten($color-red, 10%); }
+        &.orange { background: lighten($color-orange, 10%); }
+        &.yellow { background: lighten($color-yellow, 10%); }
+        &.green  { background: lighten($color-green, 10%%); }
+        &.blue   { background: lighten($color-blue, 10%); }
+        &.indigo { background: lighten($color-indigo, 10%); }
+        &.violet { background: lighten($color-violet, 10%); }
+        
     }
     
 }
