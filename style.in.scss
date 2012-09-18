@@ -24,14 +24,13 @@ $line-thickness: 	4px;
 $content-width: 	540px;
 $sidebar-width: 	220px;
 
-// Colors
-$color-red:       #FF3366;
-$color-orange:    #FF6633;
-$color-yellow:    #FFCC33;
-$color-green:     #00661A;
-$color-blue:      #3366FF;
-$color-indigo:    #6633FF;
-$color-violet:    #002EB8;
+// Colors, based on "Good Fortune" scheme
+// http://www.colorschemer.com/schemes/viewscheme.php?id=9534
+$color-red:       #C2314B;
+$color-orange:    #E68038;
+$color-yellow:    #DDBB40;
+$color-green:     #899F0F;
+$color-blue:      #138CA1;
 
 
 /* ----------------------------------------------------------------------
@@ -137,6 +136,15 @@ acronym {
 
 p.to_content { display: none; }
 p.to_top	 { display: block; text-align: right; width: $content-width; padding-left: 20px; font-size: 0.9em; }
+
+ul {
+
+    &.no_bullets {
+        list-style: none;
+    }
+
+}
+
 
 
 /* ----------------------------------------------------------------------
@@ -417,6 +425,11 @@ input[type="submit"] {
 	color: #111;
 }
 
+.button.download > span {
+	 background: url('icons/download.png') center left no-repeat;
+	padding-left: 22px;
+}
+
 .search_box {
 	border: 1px solid #bbb;
 	width: 190px;
@@ -655,6 +668,16 @@ dl.summary {
 
 
 /* ----------------------------------------------------------------------
+ * -- Downloads
+ * ---------------------------------------------------------------------- */
+
+article > section.downloads { 
+	text-align: center;
+	margin: 8px 0;
+}
+
+
+/* ----------------------------------------------------------------------
  * -- Tables
  * ---------------------------------------------------------------------- */
 
@@ -781,14 +804,6 @@ table.timeline {
             border-color: lighten($color-blue, 10%);
         }
         
-        &.indigo th[scope='row'] {
-            border-color: lighten($color-indigo, 10%);
-        }
-        
-        &.violet th[scope='row'] {
-            border-color: lighten($color-violet, 10%);
-        }
-        
         &.large {
             th, td {
                 padding-bottom: 80px;
@@ -861,6 +876,11 @@ table.activity {
 }
 
 span.bar {
+
+    &.outlined {
+        padding: 1px;
+        border: 1px solid #aaa;
+    }
     
     display: block;
     background: #fafafa;
@@ -871,28 +891,26 @@ span.bar {
     }
     
     &:hover .contents {
-        opacity: 0.8;
+//        opacity: 0.8;
     }
 
     .contents {
         display: block;
         height: 24px;
-        background: lighten($color-blue, 20%);
+        background: $color-blue;
         color: transparent;
         
         &:hover {
             opacity: 1;
         }
-
-        opacity: 0.6;
         
-        &.red    { background: lighten($color-red, 10%); }
-        &.orange { background: lighten($color-orange, 10%); }
-        &.yellow { background: lighten($color-yellow, 10%); }
-        &.green  { background: lighten($color-green, 10%%); }
-        &.blue   { background: lighten($color-blue, 10%); }
-        &.indigo { background: lighten($color-indigo, 10%); }
-        &.violet { background: lighten($color-violet, 10%); }
+        opacity: 0.9;
+        
+        &.red    { background: $color-red; }
+        &.orange { background: $color-orange; }
+        &.yellow { background: $color-yellow; }
+        &.green  { background: $color-green; }
+        &.blue   { background: $color-blue; }
         
     }
     
