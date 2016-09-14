@@ -1,10 +1,10 @@
 <?php
 /**
  * functions.php
- * 
+ *
  * Shared functionality used by the theme. Sets up theme options and contains
  * helper functions for displaying things
- * 
+ *
  * @package    MinimalTheme
  * @subpackage Functions
  * @author     Phil Newton <phil@sodaware.net>
@@ -18,8 +18,8 @@
 // ----------------------------------------------------------------------
 
 // Hooks
-add_action('init', 'minimal_setup_theme');
-add_action('wp_head', 'minimal_minify_location', 99);
+add_action( 'init', 'minimal_setup_theme' );
+add_action( 'wp_head', 'minimal_minify_location', 99 );
 
 
 // ----------------------------------------------------------------------
@@ -29,8 +29,7 @@ add_action('wp_head', 'minimal_minify_location', 99);
 /**
  * Setup the theme sidebars, menus and external resources.
  */
-function minimal_setup_theme()
-{
+function minimal_setup_theme() {
 	minimal_setup_javascript();
 	minimal_setup_stylesheets();
 	minimal_setup_sidebars();
@@ -40,49 +39,42 @@ function minimal_setup_theme()
 /**
  * Setup site javascript
  */
-function minimal_setup_javascript()
-{
-	
+function minimal_setup_javascript() {
+
 	// Don't load scripts in admin area as it stops jQuery from working
-	if (is_admin()) {
+	if ( is_admin() ) {
 		return;
 	}
-	
+
 	// Remove jquery
-	wp_deregister_script('jquery');
-	wp_deregister_script('simple_google_analytics');
-	
-	// Core Javascript
-	wp_enqueue_script('minimal-modernizer', 'http://' . $_SERVER['HTTP_HOST'] . '/rsc/js/modernizr.js');
-	
+	wp_deregister_script( 'jquery' );
+	wp_deregister_script( 'simple_google_analytics' );
+
 }
 
 /**
  * Setup site stylesheets
  */
-function minimal_setup_stylesheets()
-{
-	
-	// Don't load scripts in admin area as it stops jQuery from working
-	if (is_admin()) {
+function minimal_setup_stylesheets() {
+
+	if ( is_admin() ) {
 		return;
 	}
-	
-   // Theme stylesheet
-   wp_enqueue_style('minimal', get_template_directory_uri() . '/style.css');
+
+	// Theme stylesheet
+	wp_enqueue_style( 'minimal', get_template_directory_uri() . '/style.css' );
 
 	// Print stylesheet
-	wp_enqueue_style('minimal-print', get_template_directory_uri() . '/print.css', null, false, 'print');	
-	
+	wp_enqueue_style( 'minimal-print', get_template_directory_uri() . '/print.css', null, false, 'print' );
+
 }
 
 /**
  * Registers theme sidebars with WordPress
  */
-function minimal_setup_sidebars()
-{
-	
-	register_sidebar(array(
+function minimal_setup_sidebars() {
+
+	register_sidebar( array(
 		'name'			=> 'Primary Sidebar Widgets',
 		'id'			=> 'primary-sidebar',
 		'description'	=> 'Widgets that appear in the left sidebar',
@@ -90,20 +82,19 @@ function minimal_setup_sidebars()
 		'after_widget'	=> '</section>',
 		'before_title'	=> '<h2>',
 		'after_title'	=> '</h2>',
-	));
+	) );
 
 }
 
 /**
  * Registers theme menus with WordPress
  */
-function minimal_setup_menus()
-{
-	
-	register_nav_menus(array(
-      'footer_links'	=> 'Footer Links'
-	));
-	
+function minimal_setup_menus() {
+
+	register_nav_menus( array(
+		'footer_links' => 'Footer Links',
+	) );
+
 }
 
 
@@ -116,9 +107,8 @@ function minimal_setup_menus()
  * This means that minified files that require jQuery will still work as jQuery
  * will now load before, rather than after minified files.
  */
-function minimal_minify_location()
-{
-	if (class_exists('WPMinify')) {
+function minimal_minify_location() {
+	if ( class_exists( 'WPMinify' ) ) {
 		echo "<!-- WP-Minify JS -->\n";
 		echo "<!-- WP-Minify CSS -->\n";
 	}
