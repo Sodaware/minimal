@@ -8,7 +8,7 @@ Customizing
 -----------
 
 `minimal` works out of the box, but can be customized to suit your needs. The
-stylesheet is built with [SASS](http://sass-lang.com). 
+stylesheet is built with [SASS](http://sass-lang.com).
 
 Fonts and colours can be changed in the first section of the stylesheet.
 
@@ -19,7 +19,13 @@ use, such as `doc` or `htm`:
     @include icon-link('extension');
 
 Icon files should be png files, the lowercase extension name and prefixed with
-`icn_`.
+`icn_`. For example, the icon for `xslt` files should be `icn_xslt.png`. 
+
+To rebuild the stylesheet, run:
+
+```bash
+make styles
+```
 
 
 Credits
