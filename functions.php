@@ -21,6 +21,8 @@
 add_action( 'init', 'minimal_setup_theme' );
 add_action( 'wp_head', 'minimal_minify_location', 99 );
 
+add_theme_support( 'title-tag' );
+
 
 // ----------------------------------------------------------------------
 // -- Theme Setup Functions
