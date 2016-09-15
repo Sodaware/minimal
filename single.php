@@ -16,7 +16,7 @@
 		</p>
 		<?php the_content( __( '(more...)' ) ) ?>
 
-		<?php get_template_part( 'post', 'series_nav' ) ?>
+		<?php get_template_part( 'post', 'series-nav' ) ?>
 
 		<?php if ( function_exists( 'related_posts' ) ) : ?>
 			<section class="related">
