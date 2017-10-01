@@ -75,17 +75,15 @@ function minimal_setup_stylesheets() {
  * Registers theme sidebars with WordPress
  */
 function minimal_setup_sidebars() {
-
 	register_sidebar( array(
-		'name'			=> 'Primary Sidebar Widgets',
-		'id'			=> 'primary-sidebar',
-		'description'	=> 'Widgets that appear in the left sidebar',
-		'before_widget'	=> '<section id="%1$s" class="%2$s">',
-		'after_widget'	=> '</section>',
-		'before_title'	=> '<h2>',
-		'after_title'	=> '</h2>',
+		'name'          => 'Primary Sidebar Widgets',
+		'id'            => 'primary-sidebar',
+		'description'   => 'Widgets that appear in the left sidebar',
+		'before_widget' => '<section id="%1$s" class="%2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
 	) );
-
 }
 
 /**
