@@ -1,6 +1,8 @@
 Minimal
 =======
 
+![Minimal theme screenshot](https://www.philnewton.net/assets/images/code/minimal-theme-thumb.jpg)
+
 A minimalist theme for people that like text and not much else.
 
 
