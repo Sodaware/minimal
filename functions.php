@@ -51,6 +51,9 @@ function minimal_setup_javascript() {
 	// Remove jquery
 	wp_deregister_script( 'jquery' );
 	wp_deregister_script( 'simple_google_analytics' );
+	// Add modernizr for Internet Explorer.
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js' );
+	wp_script_add_data( 'modernizr', 'conditional', 'IE' );
 
 }
 
