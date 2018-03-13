@@ -23,7 +23,7 @@
 		'depth'           => 0,
 	) );
 	?>
-	
+
 </footer>
 
 <?php wp_footer(); ?>

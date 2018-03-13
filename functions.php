@@ -9,15 +9,14 @@
  * @subpackage Functions
  * @author     Phil Newton <phil@sodaware.net>
  * @copyright  2012 Phil Newton
- * @version    $Id$
+ * @version    1.0
  */
 
 
 // ----------------------------------------------------------------------
-// -- Theme Setup
+// -- Theme Setup Hooks
 // ----------------------------------------------------------------------
 
-// Hooks
 add_action( 'init', 'minimal_setup_theme' );
 add_action( 'wp_head', 'minimal_minify_location', 99 );
 
@@ -39,11 +38,11 @@ function minimal_setup_theme() {
 }
 
 /**
- * Setup site javascript
+ * Register site javascript.
  */
 function minimal_setup_javascript() {
 
-	// Don't load scripts in admin area as it stops jQuery from working
+	// Don't load scripts in admin area.
 	if ( is_admin() ) {
 		return;
 	}
@@ -58,7 +57,7 @@ function minimal_setup_javascript() {
 }
 
 /**
- * Setup site stylesheets
+ * Register site stylesheets.
  */
 function minimal_setup_stylesheets() {
 
@@ -66,16 +65,16 @@ function minimal_setup_stylesheets() {
 		return;
 	}
 
-	// Theme stylesheet
+	// Theme stylesheet.
 	wp_enqueue_style( 'minimal', get_template_directory_uri() . '/style.css' );
 
-	// Print stylesheet
+	// Print stylesheet.
 	wp_enqueue_style( 'minimal-print', get_template_directory_uri() . '/print.css', null, false, 'print' );
 
 }
 
 /**
- * Registers theme sidebars with WordPress
+ * Register theme sidebars with WordPress.
  */
 function minimal_setup_sidebars() {
 	register_sidebar( array(
@@ -90,14 +89,12 @@ function minimal_setup_sidebars() {
 }
 
 /**
- * Registers theme menus with WordPress
+ * Register theme menus with WordPress.
  */
 function minimal_setup_menus() {
-
 	register_nav_menus( array(
 		'footer_links' => 'Footer Links',
 	) );
-
 }
 
 
