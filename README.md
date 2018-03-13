@@ -14,7 +14,7 @@ stylesheet is built with [SASS](http://sass-lang.com).
 
 Fonts and colours can be changed in the first section of the stylesheet.
 
-New icons can be added by dropping the icon file into the "=icons=" folder and
+New icons can be added by dropping the icon file into the "icons" folder and
 adding the following to the stylesheet (where extension is the file extension to
 use, such as `doc` or `htm`:
 
